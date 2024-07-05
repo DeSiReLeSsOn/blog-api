@@ -73,7 +73,7 @@ DATABASES = {
         "NAME": "blog_one",
         "USER": 'blog_admin',
         "PASSWORD": '1234',
-        'HOST': 'postgres-db',
+        'HOST': 'postgres-database',
         "PORT": 5432,
     }
 } 

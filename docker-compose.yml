@@ -1,9 +1,9 @@
 version: '3.7'
 
 services:
-  postgres-db:
+  postgres-database:
       image: postgres:latest
-      container_name: postgres
+      container_name: postgres_db
       restart: always
       environment:
         POSTGRES_USER: blog_admin
@@ -16,4 +16,4 @@ services:
     volumes:
       - ./api:/app
     depends_on:
-      - postgres-db
+      - postgres-database
