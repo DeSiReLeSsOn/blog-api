@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  postgres-db:
+      image: postgres:latest
+      container_name: postgres
+      restart: always
+      environment:
+        POSTGRES_USER: blog_admin
+        POSTGRES_PASSWORD: 1234
+        POSTGRES_DB: blog_one
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api:/app
+    depends_on:
+      - postgres-db
