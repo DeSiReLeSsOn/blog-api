@@ -14,4 +14,4 @@ COPY . /app
 CMD python manage.py migrate \
     && python manage.py loaddata fixtures.json \
     && python manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.filter(username='root').exists() or User.objects.create_superuser('root', 'root@example.com', 'root')" \
-    && python manage.py runserver
+    && python manage.py runserver 0.0.0.0:8000
